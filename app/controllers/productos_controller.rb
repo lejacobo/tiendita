@@ -1,6 +1,11 @@
 class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
   
+  def index
+    @productos = Producto.all
+
+  end
+  
   def pay
 
     @producto = Producto.find(params[:id])
@@ -11,7 +16,7 @@ class ProductosController < ApplicationController
     @payment.amount = @producto.price
     @payment.save
 
-    @tbk_url_cbi = "http://186.64.122.15/cgi-bin/lanzarini/tbk_bp_pago.cgi"
+    @tbk_url_cgi = "http://186.64.122.15/cgi-bin/lanzarini/tbk_bp_pago.cgi"
     @tbk_tipo_transaccion = "TR_NORMAL"
     @tbk_url_exito = "http://jacobo.beerly.cl/payment/success"
     @tbk_url_fracaso = "http://jacobo.beerly.cl/payment/failure"
@@ -20,10 +25,7 @@ class ProductosController < ApplicationController
 
   # GET /productos
   # GET /productos.json
-  def index
-    @productos = Producto.all
 
-  end
 
   # GET /productos/1
   # GET /productos/1.json
