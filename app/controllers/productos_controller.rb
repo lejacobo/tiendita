@@ -24,7 +24,7 @@ class ProductosController < ApplicationController
   end
   def confirmation
     logger.info "ola ke ase"
-    render text: "1"
+    render text: "ACEPTADO"
   end
   
   def failure

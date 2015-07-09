@@ -2,7 +2,6 @@
 
   get '/productos/pay' 
   post '/productos/confirmation' 
-  post '/productos/failure'
   
   resources :productos
   
