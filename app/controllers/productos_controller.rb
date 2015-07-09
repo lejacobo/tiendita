@@ -23,6 +23,10 @@ class ProductosController < ApplicationController
 
   end
 
+  def confirmation
+    logger.info "plipli"
+  end
+  
   # GET /productos
   # GET /productos.json
 
