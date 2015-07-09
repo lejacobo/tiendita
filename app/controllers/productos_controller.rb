@@ -23,7 +23,7 @@ class ProductosController < ApplicationController
 
   end
 
-  def confirmation
+  def failure
     logger.info "plipli"
   end
   
