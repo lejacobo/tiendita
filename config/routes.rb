@@ -1,7 +1,7 @@
  Rails.application.routes.draw do
 
   get '/productos/pay' 
-  get '/productos/success' 
+  post '/productos/confirmation' 
   post '/productos/failure'
   
   resources :productos

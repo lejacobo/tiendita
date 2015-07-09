@@ -22,7 +22,11 @@ class ProductosController < ApplicationController
     @tbk_url_fracaso = "http://jacobo.beerly.cl/productos/failure"
 
   end
-
+  def confirmation
+    logger.info "ola ke ase"
+    render text: "1"
+  end
+  
   def failure
     logger.info "plipli"
   end
