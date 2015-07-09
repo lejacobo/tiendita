@@ -1,4 +1,5 @@
 class ProductosController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:confirmation, :failure]
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -22,6 +23,7 @@ class ProductosController < ApplicationController
     @tbk_url_fracaso = "http://jacobo.beerly.cl/productos/failure"
 
   end
+  
   def confirmation
     logger.info "ola ke ase"
     render text: "ACEPTADO"
