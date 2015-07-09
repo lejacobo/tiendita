@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
+  get 'productos/pay' 
+  
   resources :productos
   
-  root 'products#index'
+  root 'productos#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707223202) do
+ActiveRecord::Schema.define(version: 20150709000409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "order_id"
+    t.string   "session_id"
+    t.integer  "producto_id"
+    t.string   "transaction_id"
+    t.integer  "amount"
+    t.integer  "authorization"
+    t.integer  "card_last_numbers"
+    t.boolean  "status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "payments", ["producto_id"], name: "index_payments_on_producto_id", using: :btree
 
   create_table "productos", force: :cascade do |t|
     t.string   "name"
@@ -23,4 +38,5 @@ ActiveRecord::Schema.define(version: 20150707223202) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "payments", "productos"
 end
