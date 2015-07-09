@@ -1,8 +1,8 @@
  Rails.application.routes.draw do
 
   get '/productos/pay' 
-  get '/payment/success' 
-  post '/payment/failure'
+  get '/productos/success' 
+  post '/productos/failure'
   
   resources :productos
   

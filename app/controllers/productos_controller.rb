@@ -18,8 +18,8 @@ class ProductosController < ApplicationController
 
     @tbk_url_cgi = "http://186.64.122.15/cgi-bin/lanzarini/tbk_bp_pago.cgi"
     @tbk_tipo_transaccion = "TR_NORMAL"
-    @tbk_url_exito = "http://jacobo.beerly.cl/payment/success"
-    @tbk_url_fracaso = "http://jacobo.beerly.cl/payment/failure"
+    @tbk_url_exito = "http://jacobo.beerly.cl/productos/success"
+    @tbk_url_fracaso = "http://jacobo.beerly.cl/productos/failure"
 
   end
 
